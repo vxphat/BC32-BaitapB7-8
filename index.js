@@ -1,4 +1,4 @@
-let numbers = [1, 5, -2, 4, 8, 10];
+let numbers = [1, 5, -2, 4, -8, 10];
 
 // Bài 1: Tổng các số dương có trong mảng
 function b1() {
@@ -64,3 +64,50 @@ function b7() {
     console.log("7. Thứ tự tăng dần: " + sort);
 }
 b7();
+
+//Bài 8: Tìm số nguyên tố đầu tiên
+function b8(n){
+    let flag = 1;
+    if (n<2) return flag = 0;
+
+    let i = 2;
+    while (i < n){
+        if (n % i === 0){
+            flag = 0;
+            break;
+        }
+        i++;
+    }
+    return flag;
+}
+for (let i = 0; i < numbers.length; i++){
+    if (b8(numbers[i]) === 1){
+        console.log("8. Số nguyên tố đầu tiên là: " + numbers[i])
+    }
+}
+
+//Bài 9: Đếm số nguyên
+function b9(){
+   let soNguyen = numbers.reduce((count, value, index)=>{
+    return Number.isInteger(value) ? count + 1 : count;
+   },0)
+   console.log("9. Số lượng Số nguyên là: ", soNguyen)
+}
+b9();
+
+//Bài 10: So sánh số dương và số âm
+function b10(){
+    let soDuong = numbers.reduce((count, value, index)=> {
+        return value > 0 ? count + 1 : count;
+    },0)
+
+    let soAm = numbers.reduce((count, value, index)=>{
+        return value < 0 ? count + 1 : count;
+    },0)
+    if (soDuong > soAm){
+        console.log("10. Số dương > Số âm");
+    }else{
+        console.log("10. Số âm > Số dương");
+    }
+}
+b10();

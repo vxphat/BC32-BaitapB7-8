@@ -56,7 +56,6 @@ console.log("5. Số chẵn cuối cùng trong mảng là: " + b5());
 
 // Bài 6: Đổi chỗ 2 giá trị trong mảng theo vị trí
 
-
 // Bài 7: Sắp xếp mảng theo giá trị tăng dần
 
 function b7() {
@@ -67,7 +66,7 @@ b7();
 
 //Bài 8: Tìm số nguyên tố đầu tiên
 function b8(n){
-    let flag = 1;
+    let flag = 1; //flag = 1 => số nguyên tố
     if (n<2) return flag = 0;
 
     let i = 2;
